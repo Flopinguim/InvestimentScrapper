@@ -6,7 +6,17 @@ using System.Threading.Tasks;
 
 namespace WebScrapper.Entities
 {
-    internal class Wallet
+    public class Wallet
     {
+        public List<Dividend> dividends { get; set; }
+
+        public Wallet()
+        {
+
+        }
+
+        public void addDividend(Dividend dividend) => dividends.Add(dividend);
+        
+        public void removeDividend(Dividend dividend) => dividends.Remove(dividend); 
     }
 }
