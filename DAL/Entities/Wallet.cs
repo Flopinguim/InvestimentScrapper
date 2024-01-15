@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 namespace WebScrapper.Entities
 {
     public class Wallet
     {
-        public List<Dividend> dividends { get; set; }
+        public List<Dividend> Dividends { get; set; }
 
         public Wallet()
         {

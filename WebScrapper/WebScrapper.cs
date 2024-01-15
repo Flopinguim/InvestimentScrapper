@@ -1,10 +1,11 @@
 ﻿using HtmlAgilityPack;
+using System.Net.Http;
 
 namespace WebScrapper
 {
     class WebScrapper
     {
-        static void Main(String[] args)
+        public static void Main(string[] args)
         {
             Console.WriteLine("Write the name of an Dividend");
             string dividend = Console.ReadLine();

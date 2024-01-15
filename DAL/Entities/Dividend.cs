@@ -12,10 +12,10 @@ namespace WebScrapper.Entities
         public string Name { get; set; }
         public string Segment { get; set; }
         public string CNPJ { get; set; }
-        public double AverageDailytrading { get; set; }
-        public double LastYield { get; set; }
-        public double DividendYield { get; set; }
-        public double RentabilityPerMonth { get; set; }
+        public decimal AverageDailytrading { get; set; }
+        public decimal LastYield { get; set; }
+        public decimal DividendYield { get; set; }
+        public decimal RentabilityPerMonth { get; set; }
 
         public Dividend(string companyName, string name, string segment, string cnpj, double averageDailytrading, double lastYield, double dividendYield, double rentabilityPerMonth)
         {
@@ -26,7 +26,7 @@ namespace WebScrapper.Entities
             AverageDailytrading =
             LastYield =
             DividendYield =
-            RentabilityPerMonth = 0d;
+            RentabilityPerMonth = 0m;
         }
     }
  
