@@ -1,35 +1,36 @@
-﻿using System.Windows;
+﻿using MahApps.Metro.IconPacks;
 using System.Windows.Controls;
-using MahApps.Metro.IconPacks;
+using System.Windows;
 
 namespace UI.UserControls
 {
     /// <summary>
-    /// Interaction logic for MenuButton.xaml
+    /// Interaction logic for Menubutton.xaml
     /// </summary>
-    public partial class MenuButton : UserControl
+    public partial class Menubutton : UserControl
     {
-        public MenuButton()
+        public Menubutton()
         {
             InitializeComponent();
         }
-        
+
         public PackIconMaterialKind Icon
         {
-            get { return(PackIconMaterialKind) GetValue(IconProperty); }
+            get { return(PackIconMaterialKind)GetValue(IconProperty); }
             set { SetValue(IconProperty, value); }
         }
 
         public static readonly DependencyProperty IconProperty =
-            DependencyProperty.Register("", typeof(PackIconMaterialKind), typeof(MenuButton));
+            DependencyProperty.Register("Icon", typeof(PackIconMaterialKind), typeof(Menubutton));
 
-        public bool IsActive
+        public bool isActive
         {
-            get { return (bool)GetValue(IsActiveProperty); }
-            set { SetValue(IsActiveProperty, value); }
+            get { return (bool)GetValue(isActiveProperty); }
+            set { SetValue(isActiveProperty, value); }
         }
 
-        public static readonly DependencyProperty IsActiveProperty =
-            DependencyProperty.Register("", typeof(PackIconMaterialKind), typeof(MenuButton));
+        public static readonly DependencyProperty isActiveProperty =
+            DependencyProperty.Register("isActive", typeof(bool), typeof(Menubutton));
+
     }
 }

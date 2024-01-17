@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-namespace WebScrapper.Entities
+namespace Model.Entities
 {
     public class Wallet
     {
@@ -14,8 +14,8 @@ namespace WebScrapper.Entities
 
         }
 
-        public void addDividend(Dividend dividend) => dividends.Add(dividend);
+        public void addDividend(Dividend dividend) => Dividends.Add(dividend);
         
-        public void removeDividend(Dividend dividend) => dividends.Remove(dividend); 
+        public void removeDividend(Dividend dividend) => Dividends.Remove(dividend); 
     }
 }
