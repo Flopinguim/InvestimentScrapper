@@ -24,12 +24,12 @@
 
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Foreground" Value="#7550fe" />
+                    <Setter Property="Foreground" Value="White" />
                     <Setter Property="Tag" Value="Visible" />
                 </Trigger>
 
                 <DataTrigger Binding="{Binding ElementName=menubutton,Path=IsActive}" Value="True">
-                    <Setter Property="Foreground" Value="#7550fe" />
+                    <Setter Property="Foreground" Value="White" />
                     <Setter Property="Tag" Value="Visible" />
                 </DataTrigger>
             </Style.Triggers>
@@ -97,6 +97,14 @@
                     <Setter Property="Foreground" Value="#7550fe" />
                 </Trigger>
             </Style.Triggers>
+        </Style>
+
+        <Style x:Key="topMenuButtonIcon" TargetType="Icon:PackIconMaterial">
+            <Setter Property="Width" Value="15" />
+            <Setter Property="Height" Value="15" />
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Foreground" Value="#7550fe"/>
         </Style>
 
         <Style x:Key="mainBorder" TargetType="Border">

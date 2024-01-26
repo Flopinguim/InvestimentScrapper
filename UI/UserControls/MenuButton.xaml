@@ -6,9 +6,9 @@
              xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
              mc:Ignorable="d" d:DesignWidth="100" Name="menuButton">
 
-    <Button Style="{StaticResource menuButton}">
+    <Button Style="{StaticResource menuButton}" Click="Button_Click">
         <Grid ClipToBounds="True">
-            <Ellipse Width="100" Height="100" Fill="Gray" Margin="-190 -30 0 0">
+            <Ellipse Width="100" Height="100" Fill="White" Margin="-190 -30 0 0">
                 <Ellipse.Style>
                     <Style TargetType="Ellipse">
                         <Setter Property="Visibility" Value="{Binding Path=Tag,RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type Button}}}" />

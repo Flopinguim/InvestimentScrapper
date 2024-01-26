@@ -15,9 +15,12 @@ namespace Model.Entities
         public decimal AverageDailytrading { get; set; }
         public decimal LastYield { get; set; }
         public decimal DividendYield { get; set; }
+        public decimal NetWorth { get; set; }
+        public decimal AssetValue { get; set; }
         public decimal RentabilityPerMonth { get; set; }
+        public decimal PVP { get; set; }
 
-        public Dividend(string companyName, string name, string segment, string cnpj, double averageDailytrading, double lastYield, double dividendYield, double rentabilityPerMonth)
+        public Dividend()
         {
             CompanyName =
             Name =
@@ -26,8 +29,11 @@ namespace Model.Entities
             AverageDailytrading =
             LastYield =
             DividendYield =
-            RentabilityPerMonth = 0m;
+            NetWorth =
+            AssetValue =
+            RentabilityPerMonth =
+            PVP = 0m;
         }
     }
- 
+
 }

@@ -36,9 +36,9 @@
                         <!--Menu Buttons-->
                         <!--buttons-->
                     </StackPanel>
+                    <uc:Menubutton Icon="Power" VerticalAlignment="Bottom" Margin="0 0 0 15" x:Name="Close" ButtonClick="Close_ButtonClick"/>
                 </Grid>
             </Border>
-
 
             <!--Top Menu-->
             <Grid Grid.Column="1" Margin="30">
@@ -52,13 +52,13 @@
                     <TextBlock Margin="40 0 15 0" VerticalAlignment="Center" Foreground="Gray" Panel.ZIndex="1"
                            IsHitTestVisible="False" Text="Insira aqui o nome do dividendo ..."                              
                            Visibility="{Binding ElementName=textBox,Path=Text.isEmpty,Converter={StaticResource boolToVis}}"/>
-                    <TextBox x:Name="textBox" Style="{StaticResource searchTextBox}"/>
+                    <TextBox x:Name="textBox" Style="{StaticResource searchTextBox}" GotFocus="textBox_GotFocus" TextChanged="textBox_TextChanged"/>
                     <Icon:PackIconMaterial Kind="Magnify" Width="15" Height="15" VerticalAlignment="Center" Foreground="Gray" Margin="15 0 0 0" HorizontalAlignment="Left"/>
                 </Grid>
 
                 <!--Buttons-->
                 <StackPanel Orientation="Horizontal" Grid.Column="1" Margin="20 0 0 0">
-                    <Button Style="{StaticResource topMenuButton}">
+                    <Button Style="{StaticResource topMenuButton}" x:Name="btnAdd" Click="btnAdd_Click">
                         <Icon:PackIconMaterial Kind="PlusCircleOutline" Style="{StaticResource topMenuButtonIcon}"/>
                     </Button>
                 </StackPanel>
@@ -74,9 +74,9 @@
 
                 <!--Info Card Left-->
                 <StackPanel Margin="10 0">
-                    <uc:InfoCard Number="18" Title="Avarage Days to Hire" IsTechnical="True" IsActive="True" />
-                    <uc:InfoCard Number="54" Title="Avarage Days to Fill" IsTechnical="True" />
-                    <uc:InfoCard Number="98" Title="Offer Acceptance" IsTechnical="True" />
+                    <uc:InfoCard x:Name="infoCard1" Number="18" Title="Avarage Days to Hire" IsTechnical="True" />
+                    <uc:InfoCard x:Name="infoCard2" Number="54" Title="Avarage Days to Fill" IsTechnical="True" />
+                    <uc:InfoCard x:Name="infoCard3" Number="98" Title="Offer Acceptance" IsTechnical="True" />
                 </StackPanel>
 
                 <!--Info Card Right-->
@@ -89,7 +89,7 @@
                 <!--Cost Section-->
                 <Border Grid.Column="2" Style="{StaticResource mainBorder}" Margin="10 0 10 21.5">
                     <Grid>
-                        
+
                     </Grid>
                 </Border>
 

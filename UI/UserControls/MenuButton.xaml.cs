@@ -1,14 +1,17 @@
 ﻿using MahApps.Metro.IconPacks;
-using System.Windows.Controls;
+using System;
 using System.Windows;
+using System.Windows.Controls;
 
 namespace UI.UserControls
 {
     /// <summary>
     /// Interaction logic for Menubutton.xaml
-    /// </summary>
+    /// </summary> 
     public partial class Menubutton : UserControl
     {
+        public event EventHandler ButtonClick;
+
         public Menubutton()
         {
             InitializeComponent();
@@ -16,7 +19,7 @@ namespace UI.UserControls
 
         public PackIconMaterialKind Icon
         {
-            get { return(PackIconMaterialKind)GetValue(IconProperty); }
+            get { return (PackIconMaterialKind)GetValue(IconProperty); }
             set { SetValue(IconProperty, value); }
         }
 
@@ -32,5 +35,9 @@ namespace UI.UserControls
         public static readonly DependencyProperty isActiveProperty =
             DependencyProperty.Register("isActive", typeof(bool), typeof(Menubutton));
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            ButtonClick?.Invoke(this, EventArgs.Empty);
+        }
     }
 }
