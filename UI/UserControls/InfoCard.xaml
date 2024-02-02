@@ -40,7 +40,7 @@
                             <Style.Triggers>
                                 <DataTrigger Binding="{Binding ElementName=infoCard,Path=IsTechnical}" Value="False">
                                     <Setter Property="Foreground" Value="#b23157" />
-                                    <Setter Property="Text" Value="Non-Technical Hiring" />
+                                    <Setter Property="Text" Value="{Binding ElementName=infoCard,Path=SubText}" />
                                 </DataTrigger>
                             </Style.Triggers>
                         </Style>

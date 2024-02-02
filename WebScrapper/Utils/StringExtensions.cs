@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
+﻿using System.Text.RegularExpressions;
 
 namespace Utils
 {
@@ -32,25 +27,19 @@ namespace Utils
         /// <summary>
         /// Remove os números de uma string
         /// </summary>
-        /// <param name="valor"></param>
-        /// <returns></returns>
         public static string filterNumbers(this string valor)
         {
             if (!string.IsNullOrEmpty(valor))
-            {
                 return Regex.Replace(valor, @"\D", "");
-            }
             else
-            {
                 return valor;
-            }
         }
 
         /// <summary>
         /// Retorna somente números de uma string
-        /// /// </summary>
-        /// <param name="valor"></param>
-        /// <returns></returns>
+        /// </summary>
         public static string filterChar(this string valor) => valor.isNotEmpty() ? Regex.Replace(valor, @"[^\d]", "") : valor;
+
+        public static decimal toDecimal(this string valor) => decimal.TryParse(valor, out decimal num) ? num : 0;
     }
 }

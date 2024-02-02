@@ -52,7 +52,7 @@
                     <TextBlock Margin="40 0 15 0" VerticalAlignment="Center" Foreground="Gray" Panel.ZIndex="1"
                            IsHitTestVisible="False" Text="Insira aqui o nome do dividendo ..."                              
                            Visibility="{Binding ElementName=textBox,Path=Text.isEmpty,Converter={StaticResource boolToVis}}"/>
-                    <TextBox x:Name="textBox" Style="{StaticResource searchTextBox}" GotFocus="textBox_GotFocus" TextChanged="textBox_TextChanged"/>
+                    <TextBox x:Name="textBox" Style="{StaticResource searchTextBox}"  />
                     <Icon:PackIconMaterial Kind="Magnify" Width="15" Height="15" VerticalAlignment="Center" Foreground="Gray" Margin="15 0 0 0" HorizontalAlignment="Left"/>
                 </Grid>
 
@@ -74,16 +74,16 @@
 
                 <!--Info Card Left-->
                 <StackPanel Margin="10 0">
-                    <uc:InfoCard x:Name="infoCard1" Number="18" Title="Avarage Days to Hire" IsTechnical="True" />
-                    <uc:InfoCard x:Name="infoCard2" Number="54" Title="Avarage Days to Fill" IsTechnical="True" />
-                    <uc:InfoCard x:Name="infoCard3" Number="98" Title="Offer Acceptance" IsTechnical="True" />
+                    <uc:InfoCard x:Name="infoCard1" Number="0" Title="Liquidez Média Diária" />
+                    <uc:InfoCard x:Name="infoCard2" Number="0" Title="Último Rendimento" />
+                    <uc:InfoCard x:Name="infoCard3" Number="0" Title="Dividend Yield" SubText="últ. 12 meses" />
                 </StackPanel>
 
                 <!--Info Card Right-->
                 <StackPanel Margin="10 0" Grid.Column="1">
-                    <uc:InfoCard Number="18" Title="Avarage Days to Hire" IsTechnical="False" />
-                    <uc:InfoCard Number="54" Title="Avarage Days to Fill" IsTechnical="False" />
-                    <uc:InfoCard Number="98" Title="Offer Acceptance" IsTechnical="False" />
+                    <uc:InfoCard x:Name="infoCard4" Number="0" Title="Patrimônio Líquido" />
+                    <uc:InfoCard x:Name="infoCard5" Number="0" Title="Valor Patrimonial" SubText="Por Cota"/>
+                    <uc:InfoCard x:Name="infoCard6" Number="0" Title="Rentab. no mês" />
                 </StackPanel>
 
                 <!--Cost Section-->

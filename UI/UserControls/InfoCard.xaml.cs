@@ -46,5 +46,14 @@ namespace UI.UserControls
 
         public static readonly DependencyProperty IsTechnicalProperty =
             DependencyProperty.Register("IsTechnical", typeof(bool), typeof(InfoCard));
+
+        public string SubText
+        {
+            get { return (string)GetValue(SubTextProperty); }
+            set { SetValue(SubTextProperty, value); }
+        }
+
+        public static readonly DependencyProperty SubTextProperty =
+            DependencyProperty.Register("SubText", typeof(string), typeof(InfoCard));
     }
 }

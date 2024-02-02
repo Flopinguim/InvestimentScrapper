@@ -1,5 +1,6 @@
 ﻿using BLL;
 using Model.Entities;
+using System;
 using System.Windows;
 using System.Windows.Input;
 
@@ -23,9 +24,15 @@ namespace UI
         }
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
-            dividend = new Dividend();
-            dividend =DividendBLL.scrapperValuesTolist(textBox.Text);
-            fillInfoCards();
+            try
+            {
+                dividend = DividendBLL.createDividendFromList(textBox.Text);
+                fillInfoCards();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         private void fillInfoCards()
@@ -33,18 +40,11 @@ namespace UI
             infoCard1.Number = dividend.AverageDailytrading.ToString();
             infoCard2.Number = dividend.LastYield.ToString();
             infoCard3.Number = dividend.DividendYield.ToString();
+            infoCard4.Number = dividend.LastYield.ToString();
+            infoCard5.Number = dividend.AssetValue.ToString();
+            infoCard6.Number = dividend.RentabilityPerMonth.ToString();
         }
 
         private void Close_ButtonClick(object sender, System.EventArgs e) => this.Close();
-
-        private void textBox_GotFocus(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void textBox_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
-        {
-
-        }
     }
 }
