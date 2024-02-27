@@ -38,7 +38,9 @@ namespace Utils
         /// <summary>
         /// Retorna somente números de uma string
         /// </summary>
-        public static string filterChar(this string valor) => valor.isNotEmpty() ? Regex.Replace(valor, @"[^\d]", "") : valor;
+        public static string filterChar(this string valor) => valor.isNotEmpty() ? Regex.Replace(valor, @"[^\d]", string.Empty) : valor;
+
+        public static string keepNumbersCommaDot(this string valor) => valor.isNotEmpty() ? Regex.Replace(valor, @"[^\d,\.]", string.Empty) : valor;
 
         public static decimal toDecimal(this string valor) => decimal.TryParse(valor, out decimal num) ? num : 0;
     }

@@ -4,7 +4,7 @@
         xmlns:uc="clr-namespace:UI.UserControls"
         xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
         Height="760" Width="1280" ResizeMode="NoResize" AllowsTransparency="True"
-        WindowStyle="None" WindowStartupLocation="CenterScreen" Background="Transparent">
+        WindowStyle="None" WindowStartupLocation="CenterScreen" Background="Transparent" KeyDown="Window_KeyDown">
 
     <Window.Resources>
         <BooleanToVisibilityConverter x:Key="boolToVis"/>
@@ -35,6 +35,8 @@
                         </StackPanel>
                         <!--Menu Buttons-->
                         <!--buttons-->
+                        <uc:Menubutton Icon="IdCard"/>
+                        <uc:Menubutton Icon="FileDownload"/>
                     </StackPanel>
                     <uc:Menubutton Icon="Power" VerticalAlignment="Bottom" Margin="0 0 0 15" x:Name="Close" ButtonClick="Close_ButtonClick"/>
                 </Grid>
@@ -49,15 +51,15 @@
 
                 <!--Search Textbox-->
                 <Grid>
-                    <TextBlock Margin="40 0 15 0" VerticalAlignment="Center" Foreground="Gray" Panel.ZIndex="1"
+                    <TextBlock Margin="40 0 15 0" Name="txtbSearch" VerticalAlignment="Center" Foreground="Gray" Panel.ZIndex="1"
                            IsHitTestVisible="False" Text="Insira aqui o nome do dividendo ..."                              
                            Visibility="{Binding ElementName=textBox,Path=Text.isEmpty,Converter={StaticResource boolToVis}}"/>
-                    <TextBox x:Name="textBox" Style="{StaticResource searchTextBox}"  />
+                    <TextBox x:Name="textBox" Style="{StaticResource searchTextBox}" GotFocus="textBox_GotFocus" LostFocus="textBox_LostFocus"/>
                     <Icon:PackIconMaterial Kind="Magnify" Width="15" Height="15" VerticalAlignment="Center" Foreground="Gray" Margin="15 0 0 0" HorizontalAlignment="Left"/>
                 </Grid>
 
                 <!--Buttons-->
-                <StackPanel Orientation="Horizontal" Grid.Column="1" Margin="20 0 0 0">
+                <StackPanel Orientation="Horizontal" Grid.Column="1" >
                     <Button Style="{StaticResource topMenuButton}" x:Name="btnAdd" Click="btnAdd_Click">
                         <Icon:PackIconMaterial Kind="PlusCircleOutline" Style="{StaticResource topMenuButtonIcon}"/>
                     </Button>
@@ -92,7 +94,9 @@
 
                     </Grid>
                 </Border>
-
+                
+                
+                
             </Grid>
         </Grid>
     </Border>

@@ -31,14 +31,14 @@ namespace BLL
             foreach (var div in htmlDocument.DocumentNode.SelectNodes("//div[@class='indicators__box']"))
             {
                 // Obtendo o texto das tags 'p' dentro da div
-                string value = div.SelectSingleNode("p[2]/b").InnerText.Trim().filterChar();
+                string value = div.SelectSingleNode("p[2]/b").InnerText.keepNumbersCommaDot();
                 objValues.Add(decimal.Parse(value));
             }
 
             foreach (var div in htmlDocument.DocumentNode.SelectNodes("//div[@class='basicInformation__grid__box']"))
             {
                 // Obtendo o texto das tags 'p' dentro da div
-                string value = div.SelectSingleNode("p[2]/b").InnerText.Trim().filterChar();
+                string value = div.SelectSingleNode("p[2]/b").InnerText.keepNumbersCommaDot();
                 objValues.Add(value.toDecimal());
             }
             return objValues;
@@ -46,28 +46,35 @@ namespace BLL
 
         public static List<string> scrapperLabelsToStringList(string dividend)
         {
-            HtmlDocument htmlDocument = requestSite(dividend);
-
-            // Remove as tags <small> do HTML usando LINQ
-            htmlDocument.DocumentNode.Descendants("small").ToList().ForEach(smallTag => smallTag.Remove());
-
-            // Extrai os valores das tags <b
-
-            List<string> labels = new List<string>();
-            foreach (var div in htmlDocument.DocumentNode.SelectNodes("//div[@class='indicators__box']"))
+            try
             {
-                // Obtendo o texto das tags 'p' dentro da div
-                string label = div.SelectSingleNode("p[1]").InnerText.Trim();
-                labels.Add(label);
-            }
+                HtmlDocument htmlDocument = requestSite(dividend);
 
-            foreach (var div in htmlDocument.DocumentNode.SelectNodes("//div[@class='basicInformation__grid__box']"))
-            {
-                // Obtendo o texto das tags 'p' dentro da div
-                string label = div.SelectSingleNode("p[1]").InnerText.Trim();
-                labels.Add(label);
+                // Remove as tags <small> do HTML usando LINQ
+                htmlDocument.DocumentNode.Descendants("small").ToList().ForEach(smallTag => smallTag.Remove());
+
+                // Extrai os valores das tags <b
+
+                List<string> labels = new List<string>();
+                foreach (var div in htmlDocument.DocumentNode.SelectNodes("//div[@class='indicators__box']"))
+                {
+                    // Obtendo o texto das tags 'p' dentro da div
+                    string label = div.SelectSingleNode("p[1]").InnerText.Trim();
+                    labels.Add(label);
+                }
+
+                foreach (var div in htmlDocument.DocumentNode.SelectNodes("//div[@class='basicInformation__grid__box']"))
+                {
+                    // Obtendo o texto das tags 'p' dentro da div
+                    string label = div.SelectSingleNode("p[1]").InnerText.Trim();
+                    labels.Add(label);
+                }
+                return labels;
             }
-            return labels;
+            catch(Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
 
         public static Dividend createDividendFromList(string dividend)
