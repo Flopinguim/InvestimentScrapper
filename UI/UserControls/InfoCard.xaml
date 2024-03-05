@@ -12,11 +12,11 @@
 
                 <Style.Triggers>
                     <Trigger Property="IsMouseOver" Value="True">
-                        <Setter Property="BorderBrush" Value="#7166f9" />
+                        <Setter Property="BorderBrush" Value="DarkGray" />
                     </Trigger>
 
                     <DataTrigger Binding="{Binding ElementName=infoCard,Path=IsActive}" Value="True">
-                        <Setter Property="BorderBrush" Value="#7166f9" />
+                        <Setter Property="BorderBrush" Value="DarkGray" />
                     </DataTrigger>
                 </Style.Triggers>
             </Style>
@@ -35,11 +35,11 @@
                 <TextBlock FontSize="13">
                     <TextBlock.Style>
                         <Style TargetType="TextBlock">
-                            <Setter Property="Foreground" Value="#7166f9" />
+                            <Setter Property="Foreground" Value="#007BFF" />
 
                             <Style.Triggers>
                                 <DataTrigger Binding="{Binding ElementName=infoCard,Path=IsTechnical}" Value="False">
-                                    <Setter Property="Foreground" Value="#b23157" />
+                                    <Setter Property="Foreground" Value="Red" />
                                     <Setter Property="Text" Value="{Binding ElementName=infoCard,Path=SubText}" />
                                 </DataTrigger>
                             </Style.Triggers>

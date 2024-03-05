@@ -35,8 +35,9 @@
                         </StackPanel>
                         <!--Menu Buttons-->
                         <!--buttons-->
-                        <uc:Menubutton Icon="IdCard"/>
-                        <uc:Menubutton Icon="FileDownload"/>
+                        <uc:Menubutton Icon="Home"/>
+                        <uc:Menubutton Icon="Finance"/>
+                        <uc:Menubutton Icon="AccountSearch" />
                     </StackPanel>
                     <uc:Menubutton Icon="Power" VerticalAlignment="Bottom" Margin="0 0 0 15" x:Name="Close" ButtonClick="Close_ButtonClick"/>
                 </Grid>
@@ -60,8 +61,8 @@
 
                 <!--Buttons-->
                 <StackPanel Orientation="Horizontal" Grid.Column="1" >
-                    <Button Style="{StaticResource topMenuButton}" x:Name="btnAdd" Click="btnAdd_Click">
-                        <Icon:PackIconMaterial Kind="PlusCircleOutline" Style="{StaticResource topMenuButtonIcon}"/>
+                    <Button Style="{StaticResource topMenuButton}" x:Name="btnAdd" Click="btnAdd_Click" >
+                        <Icon:PackIconMaterial Kind="Magnify" Style="{StaticResource topMenuButtonIcon}"/>
                     </Button>
                 </StackPanel>
             </Grid>
