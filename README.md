@@ -13,5 +13,3 @@ Contribuições são bem-vindas! Sinta-se à vontade para abrir um pull request 
 Atenção
 
 Este programa foi criado apenas para fins educacionais. Certifique-se de ter permissão para extrair dados de quaisquer sites que você deseja raspar.
-
-Sinta-se à vontade para personalizar este README conforme necessário e adicionar mais detalhes sobre seu projeto!
