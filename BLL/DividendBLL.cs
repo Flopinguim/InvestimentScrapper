@@ -8,19 +8,19 @@ namespace BLL
     {
         const string filePath = @"C:\Projetos\Flopinguim\WebScraper_CSharp\Data.txt";
 
-        public static HtmlDocument requestSite(string dividend)
+        public static async Task<HtmlDocument> requestSite(string dividend)
         {
             string url = $"https://www.fundsexplorer.com.br/funds/{dividend.ToLower()}";
             var httpClient = new HttpClient();
-            var html = httpClient.GetStringAsync(url).Result;
+            var html = await httpClient.GetStringAsync(url);
             var htmlDocument = new HtmlDocument();
             htmlDocument.LoadHtml(html);
             return htmlDocument;
         }
 
-        public static List<decimal> scrapperValuesToDecimalList(string dividend)
+        public static async Task<List<decimal>> scrapperValuesToDecimalList(string dividend)
         {
-            HtmlDocument htmlDocument = requestSite(dividend);
+            HtmlDocument htmlDocument = await requestSite(dividend);
 
             // Remove as tags <small> do HTML usando LINQ
             htmlDocument.DocumentNode.Descendants("small").ToList().ForEach(smallTag => smallTag.Remove());
@@ -44,11 +44,11 @@ namespace BLL
             return objValues;
         }
 
-        public static List<string> scrapperLabelsToStringList(string dividend)
+        public static async Task<List<string>> scrapperLabelsToStringList(string dividend)
         {
             try
             {
-                HtmlDocument htmlDocument = requestSite(dividend);
+                HtmlDocument htmlDocument = await requestSite(dividend);
 
                 // Remove as tags <small> do HTML usando LINQ
                 htmlDocument.DocumentNode.Descendants("small").ToList().ForEach(smallTag => smallTag.Remove());
@@ -77,10 +77,10 @@ namespace BLL
             }
         }
 
-        public static Dividend createDividendFromList(string dividend)
+        public static async Task<Dividend> createDividendFromList(string dividend)
         {
-            List<string> labels = scrapperLabelsToStringList(dividend);
-            List<decimal> values = scrapperValuesToDecimalList(dividend);
+            List<string> labels = await scrapperLabelsToStringList(dividend);
+            List<decimal> values = await scrapperValuesToDecimalList(dividend);
 
             Dividend fundInfo = new Dividend
             {
