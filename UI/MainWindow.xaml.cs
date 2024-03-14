@@ -1,9 +1,10 @@
 ﻿using BLL;
+using MahApps.Metro.IconPacks;
 using Model.Entities;
 using System;
-using System.Linq;
 using System.Windows;
 using System.Windows.Input;
+using System.Windows.Media;
 using Utils;
 
 namespace UI
@@ -24,12 +25,12 @@ namespace UI
         {
             try
             {
-                    dividend = DividendBLL.createDividendFromList(textBox.Text);
-                    fillInfoCards();
+                dividend = DividendBLL.createDividendFromList(textBox.Text);
+                fillInfoCards();
             }
             catch (Exception ex)
             {
-                throw new Exception(ex.Message);
+                new NotificationUI(ex.Message, PackIconMaterialKind.Alert, Color.FromRgb(10, 0, 0)).Show();
             }
         }
 
@@ -79,6 +80,11 @@ namespace UI
                 this.DragMove();
         }
         #endregion
+
+        private void Menubutton_ButtonClick(object sender, EventArgs e)
+        {
+            new NotificationUI("seila", PackIconMaterialKind.Alert, Color.FromRgb(214, 12, 23)).Show();
+        }
     }
 }
 

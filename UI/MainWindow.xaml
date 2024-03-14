@@ -37,7 +37,7 @@
                         <!--buttons-->
                         <uc:Menubutton Icon="Home"/>
                         <uc:Menubutton Icon="Finance"/>
-                        <uc:Menubutton Icon="AccountSearch" />
+                        <uc:Menubutton Icon="AccountSearch" ButtonClick="Menubutton_ButtonClick"/>
                     </StackPanel>
                     <uc:Menubutton Icon="Power" VerticalAlignment="Bottom" Margin="0 0 0 15" x:Name="Close" ButtonClick="Close_ButtonClick"/>
                 </Grid>
