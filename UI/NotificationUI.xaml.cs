@@ -7,9 +7,6 @@ using System.Windows.Threading;
 
 namespace UI
 {
-    /// <summary>
-    /// Interaction logic for NotificationUI.xaml
-    /// </summary>
     public partial class NotificationUI : Window
     {
         private DispatcherTimer timer;
@@ -37,7 +34,7 @@ namespace UI
         private void InitializeTimer()
         {
             timer = new DispatcherTimer();
-            timer.Interval = TimeSpan.FromMilliseconds(1); // Adjust the interval for smoother animation
+            timer.Interval = TimeSpan.FromMilliseconds(1); // alterar casoprecise de uma animacao melhor
             timer.Tick += Timer_Tick;
         }
 
