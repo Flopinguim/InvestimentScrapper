@@ -18,11 +18,11 @@ namespace UI
             setVisibilyInfoCard(Visibility.Hidden);
         }
 
-        private void callSearch()
+        private async void callSearch()
         {
             try
             {
-                dividend = DividendBLL.createDividendFromList(textBox.Text);
+                dividend = await DividendBLL.createDividendFromList(textBox.Text);
                 fillInfoCards();
             }
             catch (Exception ex)
