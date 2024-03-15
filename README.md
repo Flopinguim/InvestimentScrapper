@@ -1,7 +1,6 @@
 # Web Scraper para Fundos Imobiliários
 
 Este é um simples programa em C# para aprender e praticar técnicas de web scraping, com o objetivo de extrair informações de fundos imobiliários de uma página da web.
-Funcionalidades
 
 ![image](https://github.com/Flopinguim/InvestimentScrapper/assets/102042861/e8336df3-0241-4477-a4ea-d9c300cefac6)
 
