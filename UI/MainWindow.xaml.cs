@@ -1,6 +1,7 @@
 ﻿using BLL;
 using MahApps.Metro.IconPacks;
 using Model.Entities;
+using MODEL.Enumerators;
 using System;
 using System.Windows;
 using System.Windows.Input;
@@ -27,7 +28,7 @@ namespace UI
             }
             catch (Exception ex)
             {
-                new NotificationUI(ex.Message, PackIconMaterialKind.Alert, Color.FromRgb(10, 0, 0)).Show();
+                new NotificationUI(NotificationEnum.Error, ex.Message).Show();
             }
         }
 
@@ -80,7 +81,7 @@ namespace UI
 
         private void Menubutton_ButtonClick(object sender, EventArgs e)
         {
-            new NotificationUI("seila", PackIconMaterialKind.Alert, Color.FromRgb(214, 12, 23)).Show();
+            new NotificationUI(NotificationEnum.Success, "teste").Show();
         }
     }
 }

@@ -95,9 +95,9 @@
 
                     </Grid>
                 </Border>
-                
-                
-                
+
+                <StackPanel>
+                </StackPanel>
             </Grid>
         </Grid>
     </Border>
